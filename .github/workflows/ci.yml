@@ -18,3 +18,19 @@ jobs:
     - name: Build Docker image
       run: docker build -t nginx-demo .
      
+    - name: build image
+      runn: docker build
+    - name: Run container
+      run: docker run
+
+
+logs:
+  needs: build
+  steps:
+    - docker ps
+    - docker logs my-nginx
+
+deploy:
+  needs: logs
+  steps:
+    - curl http://localhost:80
