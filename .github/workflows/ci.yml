@@ -2,7 +2,7 @@ name: Nginx Docker Demo CI
 
 on:
   push:
-    branches: [ " main "]
+    branches: [ "main"]
  
 jobs:
   build:
